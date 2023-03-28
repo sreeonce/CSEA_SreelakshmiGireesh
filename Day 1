@@ -1,1 +1,265 @@
 1. Write a c program to get 3 sides of a triangle as input and find out whether we can frame a triangle or not
+
+#include<stdio.h>
+void main()
+{
+    int a,b,c;
+    printf("Enter the lengths of the 3 sides\n");
+    scanf("%d%d%d",&a,&b,&c);
+    if(((a+b)>=c)&&((b+c)>=a)&&((a+c)>=b))
+        printf("A triangle can be framed\n");
+    else
+        printf("A triangle cannot be framed\n");
+}
+
+//output:
+Enter the lengths of the 3 sides
+2 3 5
+A triangle can be framed
+
+2. C program to check if a number is perfect number or not
+
+#include <stdio.h>
+void main() 
+{
+   int num, i, sum = 0;
+   printf("Enter a number: ");
+   scanf("%d", &num);
+   for (i = 1; i < num; i++)
+        if (num % i == 0)
+                sum += i;
+    if (sum == num)
+        printf("%d is a perfect number.", num);
+    else 
+        printf("%d is not a perfect number.", num);
+}
+
+//output:
+Enter a number: 28
+28 is a perfect number.
+
+3. Find output of the following
+
+a)
+
+#include<stdio.h>
+int main()
+{
+    char str[25];
+    printf("%d",printf("CSE STUDENTS ROCKS"));
+    return 0;
+}
+
+//output:
+CSE STUDENTS ROCKS18
+
+b) 
+
+#include<stdio.h>
+int main()
+{
+  int a=3;
+  printf("%d");
+  return 0;
+}
+
+//7345056
+
+c)
+
+#include<stdio.h>
+int main()
+{
+  char *ptr="Kollam Beach";
+  printf(ptr+3);
+  return 0;
+ }
+ 
+ //output:
+ lam Beach
+ 
+ d)
+ 
+ #include<stdio.h>
+ int main()
+{
+  int a,b;
+  printf("%d",(scanf("%d%d",&a,&b));
+  return 0;
+ }
+ 
+ //output:
+ 2
+ 
+ e) what's the output in 32 bit compiler
+ 
+ #include<stdio.h>
+ int main()
+ {
+  int a=1;
+  printf("%d%p",a,a);
+  return 0;
+ }
+ 
+ //output:
+ 1 0000000000000001
+ 
+ 4. Find the output of the following:
+ 
+ a)
+ 
+ #include<stdio.h>
+ int main()
+ {
+  char num='\010';
+  printf("%d",num);
+  return 0;
+ }
+ 
+ //output:
+ 8
+ 
+ b)
+ 
+ #include<stdio.h>
+ int main()
+ {
+  void num=10;
+  printf("%v",num);
+  return 0;
+ }
+ 
+ //error
+ 
+ c)
+ 
+ #include<stdio.h>
+ int main()
+ {
+  void *ptr;
+  int num=10;
+  ptr=&num;
+  printf("%d",ptr);
+  return 0;
+ }
+ 
+ //error
+ 
+ 5. String Validity program
+ 
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    int i,sum=0;
+    char str[100];
+    printf("Enter the string\n");
+    scanf("%s",str);
+    for(i=0;i<=strlen(str);i++)
+    {
+        if(str[i]=='#')
+            sum--;
+        else if(str[i]=='*')
+            sum++;
+    }
+    printf("\n%d\n",sum);
+}
+
+//output:
+Enter the string
+##*
+
+-1
+
+6. Create one array with 10 integer numbers. Find out the sum of the array. Also display whether the sum is prime or not
+
+#include<stdio.h>
+void main()
+{
+    int a[100],n,sum=0,i,j,flag=0;
+    printf("Enter the number of elements\n");
+    scanf("%d",&n);
+    printf("Enter the elements\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+        sum+=a[i];
+    }
+    printf("\nSum of the elements = %d \n",sum);
+    for(i=2;i<=sum/2;i++)
+    {
+        for(j=1;j<=sum/2;j++)
+            if(i*j==sum)
+                break;
+        if(i*j==sum)
+        {
+            flag=1;
+            break;
+        }
+    }
+        if(flag==0)
+            printf("Prime\n");
+        else
+            printf("Not prime\n");
+}
+
+//output:
+Enter the elements
+1 2 3 4 5 6 7 8 9 14
+
+Sum of the elements = 59
+Prime
+
+7. Take one number as input and find out if it contains duplicates or not
+
+#include<stdio.h>
+int main()
+{
+    int a[10]={0};
+    int num=1294;
+    while(num!=0)
+    {
+        int r=num%10;
+        if(a[r]==1)
+            break;
+        a[r]=1;
+        num=num/10;
+    }
+    if(num==0)
+        printf("yes");
+    else
+        printf("no");
+}
+
+//output:
+yes
+
+8. Create a 2D array. Extract the values and print.
+
+#include<stdio.h>
+void main()
+{
+  int a[10][10],i,j,r,c;
+  printf("Enter the size of the array\n");
+  scanf("%d%d",&r,&c);
+  printf("Enter the array elements\n");
+  for(i=0;i<r;i++)
+    for(j=0;j<c;j++)
+      scanf("%d",&a[i][j]);
+  for(i=0;i<r;i++)
+  {
+    for(j=0;j<c;j++)
+      printf("%d\t",a[i][j]);
+    printf("\n");
+  }
+}
+
+//output:
+Enter the size of the array
+3
+3
+Enter the array elements
+1 2 3 4 5 6 7 8 9
+1       2       3
+4       5       6
+7       8       9
