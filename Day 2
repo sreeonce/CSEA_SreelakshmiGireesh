@@ -1,1 +1,27 @@
+1. Swapping integers with pointers
 
+#include<stdio.h>
+void main()
+{
+  int a,b,*p1,*p2,*p;
+  a=100;
+  b=200;
+  p1=&a;
+  p2=&b;
+  *p=*p1;
+  *p1=*p2;
+  *p2=*p;
+}
+
+2. Addition of 2 integers with pointers
+
+#include<stdio.h>
+void main()
+{
+  int a,b,*p1,*p2,sum;
+  a=100;
+  b=200;
+  p1=&a;
+  p2=&b;
+  sum= *p1 + *p2;
+}
